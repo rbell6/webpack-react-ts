@@ -1,6 +1,6 @@
 import './App.css';
 
-export function App() {
+export function App(): JSX.Element {
 	return (
 		<div className="App">
 			{'hello webpack-react'}

@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"paths": {
+			"@assets/*": [
+				"./assets/*"
+			]
+		},
+		"outDir": "./dist/",
+		"sourceMap": true,
+		"noImplicitAny": true,
+		"module": "commonjs",
+		"target": "ES2016",
+		"jsx": "react-jsx",
+		"allowJs": true,
+		"moduleResolution": "node"
+	},
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
+}

@@ -3,7 +3,7 @@ import { cwd } from 'process';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
-	entry: './src/index.jsx',
+	entry: './src/index.tsx',
 	output: {
 		path: path.resolve(cwd(), 'dist'),
 		filename: 'bundle.js'
@@ -12,20 +12,25 @@ export default {
 		compress: true,
 		port: 9000
 	},
-	devtool: 'source-map',
+	devtool: 'inline-source-map',
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './src/index.html'
 		})
 	],
 	resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.tsx', '.ts', '.js', '.jsx'],
 		alias: {
 			'assets': path.resolve(cwd(), 'assets')
 		}
 	},
 	module: {
 		rules: [
+			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
+			},
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
